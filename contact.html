@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Stylist Concierge — EDITÉ CLUB</title>
+  <meta name="description" content="Get in touch with EDITÉ CLUB personal stylists and membership concierge. Atelier consultations and styling inquiries.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body id="top" class="page-contact">
+
+  <div id="scroll-progress"></div>
+  <div id="page-transition-overlay"></div>
+  <div id="custom-cursor" class="custom-cursor"></div>
+
+  <!-- Navigation -->
+  <nav id="site-nav" class="site-nav">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="3" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name">EDITÉ CLUB</span>
+          <span class="brand-tagline">PARIS &bull; ATELIER</span>
+        </div>
+      </a>
+
+      <ul class="nav-links-desktop">
+        <li><a href="index.html" class="nav-link-item">HOME</a></li>
+        <li><a href="discover.html" class="nav-link-item">DISCOVER</a></li>
+        <li><a href="lookbook.html" class="nav-link-item">LOOKBOOK</a></li>
+        <li><a href="style-quiz.html" class="nav-link-item">STYLE QUIZ</a></li>
+        <li><a href="box-builder.html" class="nav-link-item">BOX BUILDER</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <button id="btn-open-auth" class="btn-nav-action">ACCOUNT</button>
+        <a href="discover.html" class="btn-nav-action">SAVED <span class="badge-count wishlist-count-badge">0</span></a>
+        <button id="btn-toggle-admin" class="btn-nav-action btn-admin-nav">ADMIN</button>
+      </div>
+
+      <button id="mobile-toggle" class="mobile-toggle" aria-label="Open Navigation">
+        <div class="mobile-toggle-bars">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <span class="brand-logo" style="font-size: 1.4rem;">EDITÉ CLUB</span>
+      <button id="close-mobile-nav" class="btn-close-mobile">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">HOME <span>01</span></a></li>
+      <li><a href="discover.html" class="mobile-nav-link">DISCOVER <span>02</span></a></li>
+      <li><a href="lookbook.html" class="mobile-nav-link">LOOKBOOK <span>03</span></a></li>
+      <li><a href="style-quiz.html" class="mobile-nav-link">STYLE QUIZ <span>04</span></a></li>
+      <li><a href="box-builder.html" class="mobile-nav-link">BOX BUILDER <span>05</span></a></li>
+    </ul>
+    <div class="mobile-nav-actions">
+      <button class="btn-nav-action btn-open-auth">ACCOUNT</button>
+      <a href="discover.html" class="btn-nav-action">SAVED <span class="badge-count wishlist-count-badge">0</span></a>
+      <button class="btn-nav-action btn-admin-nav btn-toggle-admin">ADMIN</button>
+    </div>
+    <div class="mobile-nav-footer">
+      <span class="text-muted" style="font-size: 0.75rem;">STYLE, CURATED FOR YOU.</span>
+      <button class="btn-link-editorial" onclick="document.getElementById('mobile-nav-drawer').classList.remove('open')">CLOSE</button>
+    </div>
+  </div>
+
+  <!-- MAIN CONTACT CONTENT -->
+  <main class="section-padding" style="padding-top: calc(var(--nav-height) + 3rem);">
+    <div class="editorial-container">
+      
+      <div class="row g-5 align-items-center">
+
+        <!-- LEFT COLUMN: CONTACT FORM -->
+        <div class="col-lg-6">
+          <span class="editorial-number">ATELIER CONCIERGE</span>
+          <h1 class="editorial-heading-lg mt-1 mb-3">SPEAK WITH A STYLIST</h1>
+          <p class="text-muted mb-5" style="font-size: 0.95rem;">
+            Whether you have questions regarding sizing, custom capsule requests, or active box subscriptions, our Paris team is at your service.
+          </p>
+
+          <form id="contact-form" onsubmit="event.preventDefault(); showNotification('Message sent to Paris Concierge! We will reply within 2 hours.'); this.reset();">
+            <input type="text" class="contact-form-input" placeholder="Your Full Name" required>
+            <input type="email" class="contact-form-input" placeholder="Email Address" required>
+            <select class="contact-form-input">
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="Stylist Consultation">Personal Stylist Consultation</option>
+              <option value="Subscription Modification">Subscription Modification</option>
+              <option value="Press & Atelier Partnership">Press &amp; Atelier Partnership</option>
+            </select>
+            <textarea class="contact-form-input" rows="4" placeholder="Your Message or Styling Notes..." required style="resize: none;"></textarea>
+
+            <button type="submit" class="btn-editorial w-100 justify-content-center mt-3">
+              <span>SEND INQUIRY TO CONCIERGE &rarr;</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- RIGHT COLUMN: ATELIER DETAILS & VISUAL -->
+        <div class="col-lg-6">
+          <div class="reveal-image mb-4" style="height: 340px;">
+            <img src="assets/images/43.jpg" alt="Paris Atelier Reception">
+          </div>
+
+          <div class="bg-paper p-4 border">
+            <span class="editorial-sub d-block mb-3">PARIS HEADQUARTERS</span>
+            <h3 class="font-serif fs-4 mb-2">EDITÉ CLUB ATELIER</h3>
+            <p class="text-muted mb-3" style="font-size: 0.85rem;">
+              14 Rue Saint-Honoré, 75001 Paris, France<br>
+              Direct Line: +33 (0)1 42 68 90 00
+            </p>
+            <div class="border-top pt-3">
+              <div class="d-flex justify-content-between text-muted" style="font-size: 0.8rem;">
+                <span>Concierge Hours:</span>
+                <span>Mon – Sat: 09:00 – 19:00 CET</span>
+              </div>
+              <div class="d-flex justify-content-between text-muted mt-1" style="font-size: 0.8rem;">
+                <span>Email Concierge:</span>
+                <span>concierge@edite.club</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="editorial-container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand-logo mb-3 d-inline-flex">
+            <div class="brand-logo-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="3" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="brand-text-group">
+              <span class="brand-name">EDITÉ CLUB</span>
+              <span class="brand-tagline">PARIS &bull; ATELIER</span>
+            </div>
+          </a>
+          <p class="text-muted" style="font-size: 0.85rem; max-width: 300px;">Style, curated for you. An independent fashion discovery platform and personal luxury subscription club.</p>
+        </div>
+        <div>
+          <span class="editorial-sub mb-3 d-block">EXPLORE</span>
+          <ul class="list-unstyled d-flex flex-column gap-2" style="font-size: 0.85rem;">
+            <li><a href="discover.html">Discover Collection</a></li>
+            <li><a href="lookbook.html">Digital Lookbook</a></li>
+            <li><a href="style-quiz.html">Interactive Style Quiz</a></li>
+            <li><a href="box-builder.html">Box Builder</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="editorial-sub mb-3 d-block">CLUB</span>
+          <ul class="list-unstyled d-flex flex-column gap-2" style="font-size: 0.85rem;">
+            <li><a href="about.html">About Atelier</a></li>
+            <li><a href="contact.html">Contact Stylist</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="editorial-sub mb-3 d-block">CONNECT</span>
+          <div class="footer-social-icons d-flex gap-2 mb-3">
+            <a href="#" class="footer-social-link" title="Instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" title="Facebook" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" title="Pinterest" aria-label="Pinterest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="20" x2="12" y2="11" />
+                <path d="M10.7 14c.437 1.263 1.43 2 2.55 2c2.071 0 3.75 -1.554 3.75 -4a5 5 0 1 0 -9.7 1.7" />
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" title="X (Twitter)" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" title="TikTok" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </a>
+          </div>
+          <span class="text-muted" style="font-size: 0.75rem; letter-spacing: 0.1em;">@EDITECLUB &bull; PARIS</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 EDITÉ CLUB PARIS. ALL RIGHTS RESERVED.</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="btn-back-to-top" class="btn-back-to-top" aria-label="Back to Top" title="Back to Top"><span>TOP</span> ↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

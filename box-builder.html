@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Builder — EDITÉ CLUB Subscription Curation</title>
+  <meta name="description" content="Assemble your personal fashion subscription box. Custom item selection, budget tiers, and frequency controls at EDITÉ CLUB.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body id="top" class="page-box-builder">
+
+  <div id="scroll-progress"></div>
+  <div id="page-transition-overlay"></div>
+  <div id="custom-cursor" class="custom-cursor"></div>
+
+  <!-- Navigation -->
+  <nav id="site-nav" class="site-nav">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="3" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name">EDITÉ CLUB</span>
+          <span class="brand-tagline">PARIS &bull; ATELIER</span>
+        </div>
+      </a>
+
+      <ul class="nav-links-desktop">
+        <li><a href="index.html" class="nav-link-item">HOME</a></li>
+        <li><a href="discover.html" class="nav-link-item">DISCOVER</a></li>
+        <li><a href="lookbook.html" class="nav-link-item">LOOKBOOK</a></li>
+        <li><a href="style-quiz.html" class="nav-link-item">STYLE QUIZ</a></li>
+        <li><a href="box-builder.html" class="nav-link-item active">BOX BUILDER</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="btn-open-auth" class="btn-nav-action">ACCOUNT</button>
+        <a href="discover.html" class="btn-nav-action">SAVED <span class="badge-count wishlist-count-badge">0</span></a>
+        <button id="btn-toggle-admin" class="btn-nav-action btn-admin-nav">ADMIN</button>
+      </div>
+
+      <button id="mobile-toggle" class="mobile-toggle" aria-label="Open Navigation">
+        <div class="mobile-toggle-bars">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <span class="brand-logo" style="font-size: 1.4rem;">EDITÉ CLUB</span>
+      <button id="close-mobile-nav" class="btn-close-mobile">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">HOME <span>01</span></a></li>
+      <li><a href="discover.html" class="mobile-nav-link">DISCOVER <span>02</span></a></li>
+      <li><a href="lookbook.html" class="mobile-nav-link">LOOKBOOK <span>03</span></a></li>
+      <li><a href="style-quiz.html" class="mobile-nav-link">STYLE QUIZ <span>04</span></a></li>
+      <li><a href="box-builder.html" class="mobile-nav-link active">BOX BUILDER <span>05</span></a></li>
+    </ul>
+    <div class="mobile-nav-actions">
+      <button class="btn-nav-action btn-open-auth">ACCOUNT</button>
+      <a href="discover.html" class="btn-nav-action">SAVED <span class="badge-count wishlist-count-badge">0</span></a>
+      <button class="btn-nav-action btn-admin-nav btn-toggle-admin">ADMIN</button>
+    </div>
+    <div class="mobile-nav-footer">
+      <span class="text-muted" style="font-size: 0.75rem;">STYLE, CURATED FOR YOU.</span>
+      <button class="btn-link-editorial" onclick="document.getElementById('mobile-nav-drawer').classList.remove('open')">CLOSE</button>
+    </div>
+  </div>
+
+  <!-- MAIN BOX BUILDER -->
+  <main class="section-padding" style="padding-top: calc(var(--nav-height) + 3rem);">
+    <div class="editorial-container">
+      
+      <!-- HEADER -->
+      <div class="mb-5">
+        <span class="editorial-number">INTERACTIVE CURATION ATELIER</span>
+        <h1 class="editorial-heading-lg mt-1 mb-2">BUILD YOUR BOX</h1>
+        <p class="text-muted fs-5" style="max-width: 580px; font-weight: 300;">
+          Select your budget tier, frequency, and hand-pick seasonal garments to populate your personal subscription capsule.
+        </p>
+      </div>
+
+      <!-- TOP LAYOUT: STEP 01, STEP 02 & STICKY CAPSULE PREVIEW -->
+      <div class="box-builder-layout mb-5">
+
+        <!-- LEFT COLUMN: BUILD STEPS 1 & 2 -->
+        <div>
+
+          <!-- STEP 1: SELECT MEMBERSHIP TIER -->
+          <div class="bg-paper p-4 p-md-5 border mb-5">
+            <span class="editorial-sub d-block mb-1">STEP 01</span>
+            <h3 class="editorial-heading-sm mb-4">Choose Your Membership Tier</h3>
+
+            <div class="row g-3">
+              <div class="col-md-4">
+                <button class="btn w-100 text-start p-3 border tier-select-btn" data-tier="Edit Box" data-price="4999">
+                  <div class="fw-semibold mb-1">THE EDIT</div>
+                  <div class="text-accent font-serif fs-4 mb-2">₹4,999 / mo</div>
+                  <div class="text-muted" style="font-size: 0.75rem;">2 Core Garments + 1 Accessory</div>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn w-100 text-start p-3 border tier-select-btn active" data-tier="Signature" data-price="6999">
+                  <div class="fw-semibold mb-1">THE SIGNATURE</div>
+                  <div class="text-accent font-serif fs-4 mb-2">₹6,999 / mo</div>
+                  <div class="text-muted" style="font-size: 0.75rem;">4 Garments + Stylist Access</div>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn w-100 text-start p-3 border tier-select-btn" data-tier="Collector" data-price="12999">
+                  <div class="fw-semibold mb-1">THE COLLECTOR</div>
+                  <div class="text-accent font-serif fs-4 mb-2">₹12,999 / mo</div>
+                  <div class="text-muted" style="font-size: 0.75rem;">6 Luxury Runway Items</div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: SELECT FREQUENCY & SIZING -->
+          <div class="bg-paper p-4 p-md-5 border">
+            <span class="editorial-sub d-block mb-1">STEP 02</span>
+            <h3 class="editorial-heading-sm mb-4">Delivery Frequency &amp; Sizing</h3>
+
+            <div class="row g-4 mb-4">
+              <div class="col-md-6">
+                <label class="editorial-sub d-block mb-2">DELIVERY FREQUENCY</label>
+                <select id="box-frequency" class="contact-form-input">
+                  <option value="Monthly">Monthly Curation (Recommended)</option>
+                  <option value="Bi-Monthly">Every 2 Months</option>
+                  <option value="Quarterly">Quarterly Seasonal Capsule</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="editorial-sub d-block mb-2">PREFERRED FIT / SIZE</label>
+                <select id="box-size" class="contact-form-input">
+                  <option value="Small">Small (EU 36 / US 4)</option>
+                  <option value="Medium" selected>Medium (EU 38 / US 6)</option>
+                  <option value="Large">Large (EU 40 / US 8)</option>
+                  <option value="Oversized">Relaxed / Oversized Silhouette</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: FLOATING STICKY PREVIEW CARD -->
+        <div>
+          <div class="box-preview-sticky">
+            <span class="editorial-sub d-block mb-1">CAPSULE PREVIEW</span>
+            <h3 class="font-serif fs-3 mb-3">YOUR CURATED BOX</h3>
+
+            <div id="box-visual" class="box-preview-visual">
+              <div class="text-center">
+                <div class="editorial-heading-md text-accent mb-0" id="box-item-count">00</div>
+                <span class="editorial-sub" style="font-size: 0.65rem;">ITEMS SELECTED</span>
+              </div>
+            </div>
+
+            <ul id="box-items-list" class="box-preview-items-list">
+              <!-- Rendered by main.js -->
+            </ul>
+
+            <div class="border-top pt-3 mt-3">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <span class="text-muted" style="font-size: 0.85rem;">Estimated Monthly Total</span>
+                <span id="box-est-price" class="font-serif fs-3 text-accent">₹6,999</span>
+              </div>
+              <span class="text-muted d-block mb-4" style="font-size: 0.7rem;">Includes free luxury shipping &amp; atelier styling.</span>
+
+              <button id="btn-confirm-box" class="btn-editorial w-100 justify-content-center">
+                <span>CONFIRM MY SUBSCRIPTION &rarr;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FULL WIDE STEP 3: PICK ITEMS FOR YOUR BOX (3 COLUMNS) -->
+      <div class="bg-paper p-4 p-md-5 border mt-4">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+          <div>
+            <span class="editorial-sub d-block mb-1">STEP 03</span>
+            <h3 class="editorial-heading-sm mb-0">Hand-Pick Seasonal Pieces</h3>
+          </div>
+          <p class="text-muted mb-0" style="font-size: 0.85rem;">Click "+ ADD TO BOX" on any item below to insert it into your preview capsule.</p>
+        </div>
+
+        <div class="row g-4">
+
+          <!-- Item Option 1 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="discover-item-card p-0">
+              <div class="item-img-container" style="height: 280px;">
+                <img src="assets/images/14.jpg" alt="Tailored Blazer">
+              </div>
+              <div class="item-card-body p-3">
+                <span class="item-category-tag">OUTERWEAR</span>
+                <h4 class="font-serif fs-5">Structured Wool Blazer</h4>
+                <div class="item-meta mt-2">
+                  <span>₹4,500</span>
+                  <button class="btn-link-editorial btn-add-to-box" data-item-id="box-opt-1" data-item-title="Structured Wool Blazer" data-item-price="₹4,500">+ ADD TO BOX</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item Option 2 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="discover-item-card p-0">
+              <div class="item-img-container" style="height: 280px;">
+                <img src="assets/images/15.jpg" alt="Silk Draped Top">
+              </div>
+              <div class="item-card-body p-3">
+                <span class="item-category-tag">TOPS</span>
+                <h4 class="font-serif fs-5">Silk Draped Top</h4>
+                <div class="item-meta mt-2">
+                  <span>₹3,200</span>
+                  <button class="btn-link-editorial btn-add-to-box" data-item-id="box-opt-2" data-item-title="Silk Draped Top" data-item-price="₹3,200">+ ADD TO BOX</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item Option 3 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="discover-item-card p-0">
+              <div class="item-img-container" style="height: 280px;">
+                <img src="assets/images/23.jpg" alt="Leather Clutch">
+              </div>
+              <div class="item-card-body p-3">
+                <span class="item-category-tag">BAGS</span>
+                <h4 class="font-serif fs-5">Sculptural Leather Clutch</h4>
+                <div class="item-meta mt-2">
+                  <span>₹5,800</span>
+                  <button class="btn-link-editorial btn-add-to-box" data-item-id="box-opt-3" data-item-title="Sculptural Leather Clutch" data-item-price="₹5,800">+ ADD TO BOX</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item Option 4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="discover-item-card p-0">
+              <div class="item-img-container" style="height: 280px;">
+                <img src="assets/images/29.jpg" alt="Sterling Silver Ring">
+              </div>
+              <div class="item-card-body p-3">
+                <span class="item-category-tag">ACCESSORIES</span>
+                <h4 class="font-serif fs-5">Sterling Silver Cuff</h4>
+                <div class="item-meta mt-2">
+                  <span>₹2,400</span>
+                  <button class="btn-link-editorial btn-add-to-box" data-item-id="box-opt-4" data-item-title="Sterling Silver Cuff" data-item-price="₹2,400">+ ADD TO BOX</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item Option 5 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="discover-item-card p-0">
+              <div class="item-img-container" style="height: 280px;">
+                <img src="assets/images/20.jpg" alt="Asymmetric Drape Midi Dress">
+              </div>
+              <div class="item-card-body p-3">
+                <span class="item-category-tag">DRESSES</span>
+                <h4 class="font-serif fs-5">Asymmetric Drape Dress</h4>
+                <div class="item-meta mt-2">
+                  <span>₹6,499</span>
+                  <button class="btn-link-editorial btn-add-to-box" data-item-id="box-opt-5" data-item-title="Asymmetric Drape Dress" data-item-price="₹6,499">+ ADD TO BOX</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item Option 6 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="discover-item-card p-0">
+              <div class="item-img-container" style="height: 280px;">
+                <img src="assets/images/21.jpg" alt="Ribbed Cashmere Turtleneck">
+              </div>
+              <div class="item-card-body p-3">
+                <span class="item-category-tag">TOPS</span>
+                <h4 class="font-serif fs-5">Ribbed Cashmere Turtleneck</h4>
+                <div class="item-meta mt-2">
+                  <span>₹4,299</span>
+                  <button class="btn-link-editorial btn-add-to-box" data-item-id="box-opt-6" data-item-title="Ribbed Cashmere Turtleneck" data-item-price="₹4,299">+ ADD TO BOX</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- AUTHENTICATION DEMO MODAL -->
+  <div id="auth-modal" class="modal-editorial-backdrop">
+    <div class="modal-editorial-box" style="max-width: 500px; grid-template-columns: 1fr;">
+      <button id="auth-modal-close" class="modal-close-btn">&times;</button>
+      <div class="p-4 p-md-5">
+        <span class="editorial-sub d-block mb-2 text-center">MEMBER ACCESS</span>
+        <h3 class="font-serif fs-2 text-center mb-4">EDITÉ CLUB LOG IN</h3>
+        <form id="form-login" class="mb-4">
+          <input type="email" id="login-email" class="contact-form-input" placeholder="Email Address" required>
+          <input type="password" id="login-pass" class="contact-form-input" placeholder="Password" required>
+          <button type="submit" class="btn-editorial w-100 justify-content-center mt-3"><span>LOG IN &rarr;</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN MANAGEMENT DRAWER -->
+  <div id="admin-drawer" class="admin-drawer">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <span class="editorial-sub">FRONTEND ADMIN MODE</span>
+      <button id="btn-close-admin" class="btn-close-mobile">&times;</button>
+    </div>
+    <h3 class="font-serif fs-4 mb-2">Member Subscriptions</h3>
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>User</th><th>Plan</th><th>Status</th><th>Style</th><th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="admin-table-body"></tbody>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="editorial-container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand-logo mb-3 d-inline-flex">
+            <div class="brand-logo-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="3" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="brand-text-group">
+              <span class="brand-name">EDITÉ CLUB</span>
+              <span class="brand-tagline">PARIS &bull; ATELIER</span>
+            </div>
+          </a>
+          <p class="text-muted" style="font-size: 0.85rem; max-width: 300px;">Style, curated for you. An independent fashion discovery platform and personal luxury subscription club.</p>
+        </div>
+        <div>
+          <span class="editorial-sub mb-3 d-block">EXPLORE</span>
+          <ul class="list-unstyled d-flex flex-column gap-2" style="font-size: 0.85rem;">
+            <li><a href="discover.html">Discover Collection</a></li>
+            <li><a href="lookbook.html">Digital Lookbook</a></li>
+            <li><a href="style-quiz.html">Interactive Style Quiz</a></li>
+            <li><a href="box-builder.html">Box Builder</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="editorial-sub mb-3 d-block">CLUB</span>
+          <ul class="list-unstyled d-flex flex-column gap-2" style="font-size: 0.85rem;">
+            <li><a href="about.html">About Atelier</a></li>
+            <li><a href="contact.html">Contact Stylist</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="editorial-sub mb-3 d-block">CONNECT</span>
+          <div class="footer-social-icons d-flex gap-2 mb-3">
+            <a href="#" class="footer-social-link" title="Instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" title="Facebook" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" title="Pinterest" aria-label="Pinterest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="20" x2="12" y2="11" />
+                <path d="M10.7 14c.437 1.263 1.43 2 2.55 2c2.071 0 3.75 -1.554 3.75 -4a5 5 0 1 0 -9.7 1.7" />
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" title="X (Twitter)" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" title="TikTok" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </a>
+          </div>
+          <span class="text-muted" style="font-size: 0.75rem; letter-spacing: 0.1em;">@EDITECLUB &bull; PARIS</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 EDITÉ CLUB PARIS. ALL RIGHTS RESERVED.</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="btn-back-to-top" class="btn-back-to-top" aria-label="Back to Top" title="Back to Top"><span>TOP</span> ↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Style Quiz — EDITÉ CLUB</title>
+  <meta name="description" content="Discover your personal style archetype with the EDITÉ CLUB interactive visual style journey. Personalized fashion box curation.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body id="top" class="page-quiz">
+
+  <div id="scroll-progress"></div>
+  <div id="page-transition-overlay"></div>
+  <div id="custom-cursor" class="custom-cursor"></div>
+
+  <!-- Navigation -->
+  <nav id="site-nav" class="site-nav">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="3" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name">EDITÉ CLUB</span>
+          <span class="brand-tagline">PARIS &bull; ATELIER</span>
+        </div>
+      </a>
+
+      <ul class="nav-links-desktop">
+        <li><a href="index.html" class="nav-link-item">HOME</a></li>
+        <li><a href="discover.html" class="nav-link-item">DISCOVER</a></li>
+        <li><a href="lookbook.html" class="nav-link-item">LOOKBOOK</a></li>
+        <li><a href="style-quiz.html" class="nav-link-item active">STYLE QUIZ</a></li>
+        <li><a href="box-builder.html" class="nav-link-item">BOX BUILDER</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="btn-open-auth" class="btn-nav-action">ACCOUNT</button>
+        <a href="discover.html" class="btn-nav-action">SAVED <span class="badge-count wishlist-count-badge">0</span></a>
+        <button id="btn-toggle-admin" class="btn-nav-action btn-admin-nav">ADMIN</button>
+      </div>
+
+      <button id="mobile-toggle" class="mobile-toggle" aria-label="Open Navigation">
+        <div class="mobile-toggle-bars">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <span class="brand-logo" style="font-size: 1.4rem;">EDITÉ CLUB</span>
+      <button id="close-mobile-nav" class="btn-close-mobile">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">HOME <span>01</span></a></li>
+      <li><a href="discover.html" class="mobile-nav-link">DISCOVER <span>02</span></a></li>
+      <li><a href="lookbook.html" class="mobile-nav-link">LOOKBOOK <span>03</span></a></li>
+      <li><a href="style-quiz.html" class="mobile-nav-link active">STYLE QUIZ <span>04</span></a></li>
+      <li><a href="box-builder.html" class="mobile-nav-link">BOX BUILDER <span>05</span></a></li>
+    </ul>
+    <div class="mobile-nav-actions">
+      <button class="btn-nav-action btn-open-auth">ACCOUNT</button>
+      <a href="discover.html" class="btn-nav-action">SAVED <span class="badge-count wishlist-count-badge">0</span></a>
+      <button class="btn-nav-action btn-admin-nav btn-toggle-admin">ADMIN</button>
+    </div>
+    <div class="mobile-nav-footer">
+      <span class="text-muted" style="font-size: 0.75rem;">STYLE, CURATED FOR YOU.</span>
+      <button class="btn-link-editorial" onclick="document.getElementById('mobile-nav-drawer').classList.remove('open')">CLOSE</button>
+    </div>
+  </div>
+
+  <!-- MAIN QUIZ AREA -->
+  <main class="section-padding" style="padding-top: calc(var(--nav-height) + 3rem);">
+    <div class="editorial-container">
+      <div class="quiz-wrapper">
+
+        <!-- INTERACTIVE AREA -->
+        <div id="quiz-interactive-area">
+          <div class="d-flex justify-content-between align-items-end mb-3">
+            <div>
+              <span class="editorial-number">PERSONAL STYLE JOURNEY</span>
+              <h1 class="editorial-heading-md mt-1">CURATE YOUR PROFILE</h1>
+            </div>
+            <span id="quiz-step-counter" class="editorial-number fs-5">01 / 06</span>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="quiz-progress-bar-container">
+            <div id="quiz-progress-fill" class="quiz-progress-fill"></div>
+          </div>
+
+          <!-- STEP 1 -->
+          <div id="quiz-step-1" class="quiz-question-step active">
+            <span class="editorial-sub d-block mb-1">QUESTION 01</span>
+            <h2 class="editorial-heading-sm mb-4">What do you usually wear on an ideal day?</h2>
+            <div class="quiz-options-grid">
+              <div class="quiz-option-card" data-value="relaxed-tailored">
+                <div class="quiz-option-img"><img src="assets/images/37.jpg" alt="Relaxed Tailored"></div>
+                <div class="quiz-option-label">RELAXED TAILORED</div>
+              </div>
+              <div class="quiz-option-card" data-value="casual-minimal">
+                <div class="quiz-option-img"><img src="assets/images/38.jpg" alt="Casual Minimal"></div>
+                <div class="quiz-option-label">CASUAL MINIMAL</div>
+              </div>
+              <div class="quiz-option-card" data-value="avant-garde">
+                <div class="quiz-option-img"><img src="assets/images/39.jpg" alt="Avant-Garde"></div>
+                <div class="quiz-option-label">AVANT-GARDE</div>
+              </div>
+              <div class="quiz-option-card" data-value="elevated-street">
+                <div class="quiz-option-img"><img src="assets/images/40.jpg" alt="Elevated Streetwear"></div>
+                <div class="quiz-option-label">ELEVATED STREET</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div id="quiz-step-2" class="quiz-question-step">
+            <span class="editorial-sub d-block mb-1">QUESTION 02</span>
+            <h2 class="editorial-heading-sm mb-4">Which silhouette feels most like you?</h2>
+            <div class="quiz-options-grid">
+              <div class="quiz-option-card" data-value="oversized">
+                <div class="quiz-option-img"><img src="assets/images/41.jpg" alt="Oversized Draped"></div>
+                <div class="quiz-option-label">OVERSIZED &amp; DRAPED</div>
+              </div>
+              <div class="quiz-option-card" data-value="fitted">
+                <div class="quiz-option-img"><img src="assets/images/42.jpg" alt="Fitted Architectural"></div>
+                <div class="quiz-option-label">FITTED ARCHITECTURAL</div>
+              </div>
+              <div class="quiz-option-card" data-value="layered">
+                <div class="quiz-option-img"><img src="assets/images/43.jpg" alt="Layered Textures"></div>
+                <div class="quiz-option-label">LAYERED TEXTURES</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div id="quiz-step-3" class="quiz-question-step">
+            <span class="editorial-sub d-block mb-1">QUESTION 03</span>
+            <h2 class="editorial-heading-sm mb-4">What color palette attracts you most?</h2>
+            <div class="quiz-options-grid">
+              <div class="quiz-option-card" data-value="warm-neutrals">
+                <div class="quiz-option-img"><img src="assets/images/44.jpg" alt="Warm Neutrals & Earth"></div>
+                <div class="quiz-option-label">EARTH &amp; WARM NEUTRALS</div>
+              </div>
+              <div class="quiz-option-card" data-value="monochrome">
+                <div class="quiz-option-img"><img src="assets/images/45.jpg" alt="Monochrome Black White"></div>
+                <div class="quiz-option-label">MONOCHROME &amp; DEEP INK</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div id="quiz-step-4" class="quiz-question-step">
+            <span class="editorial-sub d-block mb-1">QUESTION 04</span>
+            <h2 class="editorial-heading-sm mb-4">Where do you dress for most often?</h2>
+            <div class="quiz-options-grid">
+              <div class="quiz-option-card" data-value="executive">
+                <div class="quiz-option-img"><img src="assets/images/46.jpg" alt="Executive Studio & Work"></div>
+                <div class="quiz-option-label">EXECUTIVE STUDIO &amp; WORK</div>
+              </div>
+              <div class="quiz-option-card" data-value="weekend">
+                <div class="quiz-option-img"><img src="assets/images/47.jpg" alt="Weekend Lounge & Travel"></div>
+                <div class="quiz-option-label">WEEKEND LOUNGE &amp; TRAVEL</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 5 -->
+          <div id="quiz-step-5" class="quiz-question-step">
+            <span class="editorial-sub d-block mb-1">QUESTION 05</span>
+            <h2 class="editorial-heading-sm mb-4">Which accessories define your signature look?</h2>
+            <div class="quiz-options-grid">
+              <div class="quiz-option-card" data-value="leather-bags">
+                <div class="quiz-option-img"><img src="assets/images/48.jpg" alt="Sculptural Leather Bags"></div>
+                <div class="quiz-option-label">SCULPTURAL LEATHER BAGS</div>
+              </div>
+              <div class="quiz-option-card" data-value="silver-jewelry">
+                <div class="quiz-option-img"><img src="assets/images/49.jpg" alt="Minimalist Sterling Silver"></div>
+                <div class="quiz-option-label">MINIMALIST STERLING SILVER</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 6 -->
+          <div id="quiz-step-6" class="quiz-question-step">
+            <span class="editorial-sub d-block mb-1">QUESTION 06</span>
+            <h2 class="editorial-heading-sm mb-4">Which mood represents your fashion ideal?</h2>
+            <div class="quiz-options-grid">
+              <div class="quiz-option-card" data-value="poetic-luxury">
+                <div class="quiz-option-img"><img src="assets/images/50.jpg" alt="Poetic Quiet Luxury"></div>
+                <div class="quiz-option-label">POETIC QUIET LUXURY</div>
+              </div>
+              <div class="quiz-option-card" data-value="modern-utility">
+                <div class="quiz-option-img"><img src="assets/images/51.jpg" alt="Modern Utility"></div>
+                <div class="quiz-option-label">MODERN UTILITY &amp; STRUCTURE</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Controls -->
+          <div class="quiz-nav-actions d-flex justify-content-between align-items-center mt-5 pt-3 border-top gap-3">
+            <button id="btn-quiz-prev" class="btn-editorial btn-editorial-outline"><span>&larr; PREVIOUS</span></button>
+            <button id="btn-quiz-next" class="btn-editorial"><span>NEXT QUESTION &rarr;</span></button>
+          </div>
+        </div>
+
+        <!-- RESULT AREA -->
+        <div id="quiz-result-area" style="display: none;">
+          <div class="quiz-result-card">
+            <span class="editorial-number">YOUR STYLE ARCHETYPE</span>
+            <h1 id="result-profile-title" class="editorial-heading-lg text-accent my-3">THE MODERN MINIMALIST</h1>
+            <p id="result-profile-desc" class="text-muted max-w-600 mx-auto fs-5 mb-5">
+              Architectural silhouettes, clean neutral palettes, and effortless tailored elegance. You appreciate refined craftsmanship and timeless understated sophistication.
+            </p>
+
+            <div class="row text-start mb-5 g-4 max-w-700 mx-auto">
+              <div class="col-md-6">
+                <div class="style-trait-bar-item">
+                  <div class="trait-info"><span>MINIMALISM</span><span>92%</span></div>
+                  <div class="trait-progress-track"><div class="trait-progress-fill" data-target="92"></div></div>
+                </div>
+                <div class="style-trait-bar-item">
+                  <div class="trait-info"><span>NEUTRAL PALETTES</span><span>88%</span></div>
+                  <div class="trait-progress-track"><div class="trait-progress-fill" data-target="88"></div></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="style-trait-bar-item">
+                  <div class="trait-info"><span>TAILORED CUTS</span><span>82%</span></div>
+                  <div class="trait-progress-track"><div class="trait-progress-fill" data-target="82"></div></div>
+                </div>
+                <div class="style-trait-bar-item">
+                  <div class="trait-info"><span>TACTILE TEXTURES</span><span>78%</span></div>
+                  <div class="trait-progress-track"><div class="trait-progress-fill" data-target="78"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="quiz-result-ctas d-flex flex-wrap justify-content-center gap-3">
+              <a href="box-builder.html" class="btn-editorial"><span>BUILD YOUR CURATED BOX NOW &rarr;</span></a>
+              <a href="discover.html" class="btn-editorial btn-editorial-outline"><span>EXPLORE MATCHING LOOKS</span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- AUTHENTICATION DEMO MODAL -->
+  <div id="auth-modal" class="modal-editorial-backdrop">
+    <div class="modal-editorial-box" style="max-width: 500px; grid-template-columns: 1fr;">
+      <button id="auth-modal-close" class="modal-close-btn">&times;</button>
+      <div class="p-4 p-md-5">
+        <span class="editorial-sub d-block mb-2 text-center">MEMBER ACCESS</span>
+        <h3 class="font-serif fs-2 text-center mb-4">EDITÉ CLUB LOG IN</h3>
+        <form id="form-login" class="mb-4">
+          <input type="email" id="login-email" class="contact-form-input" placeholder="Email Address" required>
+          <input type="password" id="login-pass" class="contact-form-input" placeholder="Password" required>
+          <button type="submit" class="btn-editorial w-100 justify-content-center mt-3"><span>LOG IN &rarr;</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN MANAGEMENT DRAWER -->
+  <div id="admin-drawer" class="admin-drawer">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <span class="editorial-sub">FRONTEND ADMIN MODE</span>
+      <button id="btn-close-admin" class="btn-close-mobile">&times;</button>
+    </div>
+    <h3 class="font-serif fs-4 mb-2">Member Subscriptions</h3>
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>User</th><th>Plan</th><th>Status</th><th>Style</th><th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="admin-table-body"></tbody>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="editorial-container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand-logo mb-3 d-inline-flex">
+            <div class="brand-logo-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="3" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="brand-text-group">
+              <span class="brand-name">EDITÉ CLUB</span>
+              <span class="brand-tagline">PARIS &bull; ATELIER</span>
+            </div>
+          </a>
+          <p class="text-muted" style="font-size: 0.85rem; max-width: 300px;">Style, curated for you. An independent fashion discovery platform and personal luxury subscription club.</p>
+        </div>
+        <div>
+          <span class="editorial-sub mb-3 d-block">EXPLORE</span>
+          <ul class="list-unstyled d-flex flex-column gap-2" style="font-size: 0.85rem;">
+            <li><a href="discover.html">Discover Collection</a></li>
+            <li><a href="lookbook.html">Digital Lookbook</a></li>
+            <li><a href="style-quiz.html">Interactive Style Quiz</a></li>
+            <li><a href="box-builder.html">Box Builder</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="editorial-sub mb-3 d-block">CLUB</span>
+          <ul class="list-unstyled d-flex flex-column gap-2" style="font-size: 0.85rem;">
+            <li><a href="about.html">About Atelier</a></li>
+            <li><a href="contact.html">Contact Stylist</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="editorial-sub mb-3 d-block">CONNECT</span>
+          <div class="footer-social-icons d-flex gap-2 mb-3">
+            <a href="#" class="footer-social-link" title="Instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" title="Facebook" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" title="Pinterest" aria-label="Pinterest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="20" x2="12" y2="11" />
+                <path d="M10.7 14c.437 1.263 1.43 2 2.55 2c2.071 0 3.75 -1.554 3.75 -4a5 5 0 1 0 -9.7 1.7" />
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" title="X (Twitter)" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" title="TikTok" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </a>
+          </div>
+          <span class="text-muted" style="font-size: 0.75rem; letter-spacing: 0.1em;">@EDITECLUB &bull; PARIS</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 EDITÉ CLUB PARIS. ALL RIGHTS RESERVED.</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="btn-back-to-top" class="btn-back-to-top" aria-label="Back to Top" title="Back to Top"><span>TOP</span> ↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

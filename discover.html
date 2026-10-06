@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover — EDITÉ CLUB Editorial Fashion Collection</title>
+  <meta name="description" content="Discover curated fashion pieces, luxury outerwear, tailored dresses, and architectural accessories at EDITÉ CLUB.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body id="top" class="page-discover">
+
+  <!-- Top Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Page Transition Sweep Overlay -->
+  <div id="page-transition-overlay"></div>
+
+  <!-- Custom Cursor -->
+  <div id="custom-cursor" class="custom-cursor"></div>
+
+  <!-- Floating Navigation -->
+  <nav id="site-nav" class="site-nav">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="3" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name">EDITÉ CLUB</span>
+          <span class="brand-tagline">PARIS &bull; ATELIER</span>
+        </div>
+      </a>
+
+      <ul class="nav-links-desktop">
+        <li><a href="index.html" class="nav-link-item">HOME</a></li>
+        <li><a href="discover.html" class="nav-link-item active">DISCOVER</a></li>
+        <li><a href="lookbook.html" class="nav-link-item">LOOKBOOK</a></li>
+        <li><a href="style-quiz.html" class="nav-link-item">STYLE QUIZ</a></li>
+        <li><a href="box-builder.html" class="nav-link-item">BOX BUILDER</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="btn-open-auth" class="btn-nav-action">ACCOUNT</button>
+        <a href="discover.html" class="btn-nav-action">SAVED <span class="badge-count wishlist-count-badge">0</span></a>
+        <button id="btn-toggle-admin" class="btn-nav-action btn-admin-nav">ADMIN</button>
+      </div>
+
+      <button id="mobile-toggle" class="mobile-toggle" aria-label="Open Navigation">
+        <div class="mobile-toggle-bars">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <span class="brand-logo" style="font-size: 1.4rem;">EDITÉ CLUB</span>
+      <button id="close-mobile-nav" class="btn-close-mobile">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">HOME <span>01</span></a></li>
+      <li><a href="discover.html" class="mobile-nav-link active">DISCOVER <span>02</span></a></li>
+      <li><a href="lookbook.html" class="mobile-nav-link">LOOKBOOK <span>03</span></a></li>
+      <li><a href="style-quiz.html" class="mobile-nav-link">STYLE QUIZ <span>04</span></a></li>
+      <li><a href="box-builder.html" class="mobile-nav-link">BOX BUILDER <span>05</span></a></li>
+    </ul>
+    <div class="mobile-nav-actions">
+      <button class="btn-nav-action btn-open-auth">ACCOUNT</button>
+      <a href="discover.html" class="btn-nav-action">SAVED <span class="badge-count wishlist-count-badge">0</span></a>
+      <button class="btn-nav-action btn-admin-nav btn-toggle-admin">ADMIN</button>
+    </div>
+    <div class="mobile-nav-footer">
+      <span class="text-muted" style="font-size: 0.75rem; letter-spacing: 0.1em;">STYLE, CURATED FOR YOU.</span>
+      <button class="btn-link-editorial" onclick="document.getElementById('mobile-nav-drawer').classList.remove('open')">CLOSE</button>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="section-padding" style="padding-top: calc(var(--nav-height) + 3rem);">
+    <div class="editorial-container">
+      
+      <!-- HERO HEADER -->
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-7">
+          <span class="editorial-number">DISCOVERY ARCHIVE</span>
+          <h1 class="editorial-heading-lg mt-2 mb-3">DISCOVER</h1>
+          <p class="text-muted fs-5" style="max-width: 520px; font-weight: 300;">
+            Find pieces that fit your personal rhythm. Explore our latest atelier arrivals, sculptural outerwear, and luxury accessories.
+          </p>
+        </div>
+        <div class="col-lg-5 d-none d-lg-block">
+          <div class="reveal-image" style="height: 240px;">
+            <img src="assets/images/18.jpg" alt="Discover Editorial Cover">
+          </div>
+        </div>
+      </div>
+
+      <!-- FILTER RIBBON -->
+      <div class="filter-ribbon">
+        <button class="btn-filter active" data-filter="all">ALL PIECES</button>
+        <button class="btn-filter" data-filter="women">WOMEN</button>
+        <button class="btn-filter" data-filter="men">MEN</button>
+        <button class="btn-filter" data-filter="outerwear">OUTERWEAR</button>
+        <button class="btn-filter" data-filter="dresses">DRESSES</button>
+        <button class="btn-filter" data-filter="tops">TOPS</button>
+        <button class="btn-filter" data-filter="bottoms">BOTTOMS</button>
+        <button class="btn-filter" data-filter="accessories">ACCESSORIES</button>
+        <button class="btn-filter" data-filter="shoes">SHOES</button>
+      </div>
+
+      <!-- EDITORIAL MASONRY GRID (18 UNIQUE ITEMS) -->
+      <div class="discover-masonry-grid">
+
+        <!-- Item 1 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="outerwear" data-gender="women">
+          <div class="item-img-container">
+            <img src="assets/images/19.jpg" alt="Wool Belted Trench Coat">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-19" data-item-title="Wool Belted Trench Coat" data-item-img="assets/images/19.jpg" data-item-price="₹8,999" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-19" data-title="Wool Belted Trench Coat" data-category="OUTERWEAR" data-price="₹8,999" data-img="assets/images/19.jpg" data-desc="Architectural double-breasted trench in brushed virgin wool. Features dropped shoulders and storm flap details." data-pairing="Pairs effortlessly with raw denim or tailored crepe trousers." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">OUTERWEAR</span>
+            <h3 class="item-title">Wool Belted Trench Coat</h3>
+            <div class="item-meta">
+              <span>₹8,999</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-19" data-item-title="Wool Belted Trench Coat" data-item-price="₹8,999">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="dresses" data-gender="women">
+          <div class="item-img-container">
+            <img src="assets/images/20.jpg" alt="Asymmetric Drape Midi Dress">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-20" data-item-title="Asymmetric Drape Midi Dress" data-item-img="assets/images/20.jpg" data-item-price="₹6,499" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-20" data-title="Asymmetric Drape Midi Dress" data-category="DRESSES" data-price="₹6,499" data-img="assets/images/20.jpg" data-desc="Fluid silk-rayon blend dress with sculptural gather detail across waist." data-pairing="Complements leather mule heels and minimalist silver cuffs." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">DRESSES</span>
+            <h3 class="item-title">Asymmetric Drape Dress</h3>
+            <div class="item-meta">
+              <span>₹6,499</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-20" data-item-title="Asymmetric Drape Dress" data-item-price="₹6,499">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="tops" data-gender="women">
+          <div class="item-img-container">
+            <img src="assets/images/21.jpg" alt="Ribbed Cashmere Mock Neck">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-21" data-item-title="Ribbed Cashmere Mock Neck" data-item-img="assets/images/21.jpg" data-item-price="₹4,299" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-21" data-title="Ribbed Cashmere Mock Neck" data-category="TOPS" data-price="₹4,299" data-img="assets/images/21.jpg" data-desc="Ultra-soft Grade-A cashmere knit with fine ribbed texture." data-pairing="Essential base layer for structured blazers and oversized coats." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">TOPS</span>
+            <h3 class="item-title">Ribbed Cashmere Mock Neck</h3>
+            <div class="item-meta">
+              <span>₹4,299</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-21" data-item-title="Ribbed Cashmere Mock Neck" data-item-price="₹4,299">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="bottoms" data-gender="women">
+          <div class="item-img-container">
+            <img src="assets/images/22.jpg" alt="Pleated Wide-Leg Wool Trousers">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-22" data-item-title="Pleated Wide-Leg Trousers" data-item-img="assets/images/22.jpg" data-item-price="₹5,799" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-22" data-title="Pleated Wide-Leg Trousers" data-category="BOTTOMS" data-price="₹5,799" data-img="assets/images/22.jpg" data-desc="High-waisted tailored trouser with front double pleats and back welt pockets." data-pairing="Pairs with crop knit sweaters and pointed leather boots." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">BOTTOMS</span>
+            <h3 class="item-title">Pleated Wide-Leg Trousers</h3>
+            <div class="item-meta">
+              <span>₹5,799</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-22" data-item-title="Pleated Wide-Leg Trousers" data-item-price="₹5,799">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="accessories" data-gender="women">
+          <div class="item-img-container">
+            <img src="assets/images/23.jpg" alt="Sculptural Leather Shoulder Bag">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-23" data-item-title="Sculptural Leather Bag" data-item-img="assets/images/23.jpg" data-item-price="₹7,899" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-23" data-title="Sculptural Leather Bag" data-category="ACCESSORIES" data-price="₹7,899" data-img="assets/images/23.jpg" data-desc="Handcrafted Italian calfskin leather bag with curved geometry and suede lining." data-pairing="Complements monochrome evening looks." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">ACCESSORIES</span>
+            <h3 class="item-title">Sculptural Leather Bag</h3>
+            <div class="item-meta">
+              <span>₹7,899</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-23" data-item-title="Sculptural Leather Bag" data-item-price="₹7,899">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="shoes" data-gender="women">
+          <div class="item-img-container">
+            <img src="assets/images/24.jpg" alt="Architectural Mule Heel">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-24" data-item-title="Architectural Mule Heel" data-item-img="assets/images/24.jpg" data-item-price="₹6,999" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-24" data-title="Architectural Mule Heel" data-category="SHOES" data-price="₹6,999" data-img="assets/images/24.jpg" data-desc="Square-toe leather mule featuring wooden block heel." data-pairing="Stylishly accents cropped denim and midi skirts." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">SHOES</span>
+            <h3 class="item-title">Architectural Mule Heel</h3>
+            <div class="item-meta">
+              <span>₹6,999</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-24" data-item-title="Architectural Mule Heel" data-item-price="₹6,999">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="outerwear" data-gender="men">
+          <div class="item-img-container">
+            <img src="assets/images/25.jpg" alt="Oversized Double Wool Coat">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-25" data-item-title="Oversized Double Wool Coat" data-item-img="assets/images/25.jpg" data-item-price="₹11,499" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-25" data-title="Oversized Double Wool Coat" data-category="OUTERWEAR" data-price="₹11,499" data-img="assets/images/25.jpg" data-desc="Heavyweight double-faced wool overcoat with horn buttons." data-pairing="Layer over turtleneck knits and tailored trousers." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">OUTERWEAR</span>
+            <h3 class="item-title">Oversized Double Wool Coat</h3>
+            <div class="item-meta">
+              <span>₹11,499</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-25" data-item-title="Oversized Double Wool Coat" data-item-price="₹11,499">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="dresses" data-gender="women">
+          <div class="item-img-container">
+            <img src="assets/images/26.jpg" alt="Structured Linen Shift Dress">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-26" data-item-title="Structured Linen Shift Dress" data-item-img="assets/images/26.jpg" data-item-price="₹5,299" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-26" data-title="Structured Linen Shift Dress" data-category="DRESSES" data-price="₹5,299" data-img="assets/images/26.jpg" data-desc="100% organic French flax linen dress with clean square neck." data-pairing="Wear with leather slide sandals and woven tote." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">DRESSES</span>
+            <h3 class="item-title">Structured Linen Shift</h3>
+            <div class="item-meta">
+              <span>₹5,299</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-26" data-item-title="Structured Linen Shift" data-item-price="₹5,299">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 9 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="tops" data-gender="men">
+          <div class="item-img-container">
+            <img src="assets/images/27.jpg" alt="Heavy Cotton Boxy Shirt">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-27" data-item-title="Heavy Cotton Boxy Shirt" data-item-img="assets/images/27.jpg" data-item-price="₹3,899" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-27" data-title="Heavy Cotton Boxy Shirt" data-category="TOPS" data-price="₹3,899" data-img="assets/images/27.jpg" data-desc="Dense 280gsm cotton twill overshirt with mother-of-pearl buttons." data-pairing="Ideal over heavy tees and straight chinos." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">TOPS</span>
+            <h3 class="item-title">Heavy Cotton Boxy Shirt</h3>
+            <div class="item-meta">
+              <span>₹3,899</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-27" data-item-title="Heavy Cotton Boxy Shirt" data-item-price="₹3,899">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 10 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="bottoms" data-gender="men">
+          <div class="item-img-container">
+            <img src="assets/images/28.jpg" alt="Relaxed Tapered Chino">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-28" data-item-title="Relaxed Tapered Chino" data-item-img="assets/images/28.jpg" data-item-price="₹4,799" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-28" data-title="Relaxed Tapered Chino" data-category="BOTTOMS" data-price="₹4,799" data-img="assets/images/28.jpg" data-desc="Washed Japanese stretch-cotton chino trousers." data-pairing="Pairs with minimal leather sneakers." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">BOTTOMS</span>
+            <h3 class="item-title">Relaxed Tapered Chino</h3>
+            <div class="item-meta">
+              <span>₹4,799</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-28" data-item-title="Relaxed Tapered Chino" data-item-price="₹4,799">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 11 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="accessories" data-gender="women">
+          <div class="item-img-container">
+            <img src="assets/images/29.jpg" alt="Minimalist Silver Cuff & Ring Set">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-29" data-item-title="Minimalist Silver Cuff Set" data-item-img="assets/images/29.jpg" data-item-price="₹3,199" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-29" data-title="Minimalist Silver Cuff Set" data-category="ACCESSORIES" data-price="₹3,199" data-img="assets/images/29.jpg" data-desc="Solid 925 sterling silver cuff hand-buffed to satin polish." data-pairing="Subtle contrast against black merino knits." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">ACCESSORIES</span>
+            <h3 class="item-title">Minimalist Silver Cuff</h3>
+            <div class="item-meta">
+              <span>₹3,199</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-29" data-item-title="Minimalist Silver Cuff" data-item-price="₹3,199">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 12 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="shoes" data-gender="men">
+          <div class="item-img-container">
+            <img src="assets/images/30.jpg" alt="Leather Derby Shoes">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-30" data-item-title="Leather Derby Shoes" data-item-img="assets/images/30.jpg" data-item-price="₹9,499" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-30" data-title="Leather Derby Shoes" data-category="SHOES" data-price="₹9,499" data-img="assets/images/30.jpg" data-desc="Goodyear-welted full-grain calfskin derbies with rubber tread lug sole." data-pairing="Complements executive suits and wool trousers." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">SHOES</span>
+            <h3 class="item-title">Leather Derby Shoes</h3>
+            <div class="item-meta">
+              <span>₹9,499</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-30" data-item-title="Leather Derby Shoes" data-item-price="₹9,499">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 13 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="outerwear" data-gender="men">
+          <div class="item-img-container">
+            <img src="assets/images/31.jpg" alt="Minimalist Leather Bomber">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-31" data-item-title="Minimalist Leather Bomber" data-item-img="assets/images/31.jpg" data-item-price="₹14,999" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-31" data-title="Minimalist Leather Bomber" data-category="OUTERWEAR" data-price="₹14,999" data-img="assets/images/31.jpg" data-desc="Supple lambskin bomber with silver zip hardware and rib trim." data-pairing="Pair with monochrome t-shirts and dark denim." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">OUTERWEAR</span>
+            <h3 class="item-title">Minimalist Leather Bomber</h3>
+            <div class="item-meta">
+              <span>₹14,999</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-31" data-item-title="Minimalist Leather Bomber" data-item-price="₹14,999">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 14 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="tops" data-gender="women">
+          <div class="item-img-container">
+            <img src="assets/images/32.jpg" alt="Structured Linen Crop Blouse">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-32" data-item-title="Structured Linen Blouse" data-item-img="assets/images/32.jpg" data-item-price="₹3,999" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-32" data-title="Structured Linen Blouse" data-category="TOPS" data-price="₹3,999" data-img="assets/images/32.jpg" data-desc="Clean square neck cropped blouse in washed ecru linen." data-pairing="Pairs beautifully with high-rise linen trousers." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">TOPS</span>
+            <h3 class="item-title">Structured Linen Blouse</h3>
+            <div class="item-meta">
+              <span>₹3,999</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-32" data-item-title="Structured Linen Blouse" data-item-price="₹3,999">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 15 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="outerwear" data-gender="women">
+          <div class="item-img-container">
+            <img src="assets/images/33.jpg" alt="Tailored Blazer in Camel Wool">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-33" data-item-title="Camel Wool Blazer" data-item-img="assets/images/33.jpg" data-item-price="₹9,899" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-33" data-title="Camel Wool Blazer" data-category="OUTERWEAR" data-price="₹9,899" data-img="assets/images/33.jpg" data-desc="Padded shoulder single-breasted blazer in warm camel wool blend." data-pairing="Elevates casual knitwear instantly." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">OUTERWEAR</span>
+            <h3 class="item-title">Camel Wool Blazer</h3>
+            <div class="item-meta">
+              <span>₹9,899</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-33" data-item-title="Camel Wool Blazer" data-item-price="₹9,899">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 16 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="accessories" data-gender="women">
+          <div class="item-img-container">
+            <img src="assets/images/34.jpg" alt="Woven Leather Carryall Tote">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-34" data-item-title="Woven Leather Tote" data-item-img="assets/images/34.jpg" data-item-price="₹10,500" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-34" data-title="Woven Leather Tote" data-category="ACCESSORIES" data-price="₹10,500" data-img="assets/images/34.jpg" data-desc="Intricately hand-woven leather tote with interior zip pouch." data-pairing="Spacious daily companion for luxury travel." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">ACCESSORIES</span>
+            <h3 class="item-title">Woven Leather Carryall</h3>
+            <div class="item-meta">
+              <span>₹10,500</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-34" data-item-title="Woven Leather Carryall" data-item-price="₹10,500">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 17 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="outerwear" data-gender="men">
+          <div class="item-img-container">
+            <img src="assets/images/35.jpg" alt="Architectural Trench Coat">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-35" data-item-title="Architectural Trench" data-item-img="assets/images/35.jpg" data-item-price="₹12,400" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-35" data-title="Architectural Trench" data-category="OUTERWEAR" data-price="₹12,400" data-img="assets/images/35.jpg" data-desc="Water-repellent gabardine trench coat with storm lapel and horn buttons." data-pairing="Classic street statement over dark suit separates." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">OUTERWEAR</span>
+            <h3 class="item-title">Architectural Trench</h3>
+            <div class="item-meta">
+              <span>₹12,400</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-35" data-item-title="Architectural Trench" data-item-price="₹12,400">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 18 -->
+        <div class="discover-item-card reveal-on-scroll" data-category="dresses" data-gender="women">
+          <div class="item-img-container">
+            <img src="assets/images/36.jpg" alt="Midnight Evening Column Dress">
+            <div class="item-card-actions">
+              <button class="btn-card-action btn-save-wishlist" data-item-id="item-36" data-item-title="Midnight Column Dress" data-item-img="assets/images/36.jpg" data-item-price="₹13,900" title="Save to Wishlist">♡</button>
+              <button class="btn-card-action btn-quickview" data-id="item-36" data-title="Midnight Column Dress" data-category="DRESSES" data-price="₹13,900" data-img="assets/images/36.jpg" data-desc="Minimalist floor-length satin column dress with open back drape." data-pairing="Stunning for formal galas and evening receptions." title="Quick View">👁</button>
+            </div>
+          </div>
+          <div class="item-card-body">
+            <span class="item-category-tag">DRESSES</span>
+            <h3 class="item-title">Midnight Column Dress</h3>
+            <div class="item-meta">
+              <span>₹13,900</span>
+              <button class="btn-link-editorial btn-add-to-box" data-item-id="item-36" data-item-title="Midnight Column Dress" data-item-price="₹13,900">+ ADD TO BOX</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- QUICK VIEW MODAL -->
+  <div id="quickview-modal" class="modal-editorial-backdrop">
+    <div class="modal-editorial-box">
+      <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+      <div class="modal-img-col">
+        <img id="modal-img" src="" alt="Quick View Modal Image">
+      </div>
+      <div class="modal-info-col">
+        <div>
+          <span id="modal-category" class="item-category-tag">CATEGORY</span>
+          <h2 id="modal-title" class="font-serif fs-2 my-2">Item Name</h2>
+          <div id="modal-price" class="fs-4 text-accent mb-3">₹3,499</div>
+          <p id="modal-desc" class="text-muted mb-4" style="font-size: 0.85rem; line-height: 1.7;">Description goes here...</p>
+          <div class="border-top pt-3">
+            <span class="editorial-sub d-block mb-1">PAIRING RECOMMENDATION</span>
+            <p id="modal-pairing" class="text-muted" style="font-size: 0.8rem;">Pairs with wool trousers.</p>
+          </div>
+        </div>
+        <div class="d-flex gap-3 mt-4">
+          <button id="modal-btn-addbox" class="btn-editorial btn-add-to-box flex-grow-1 justify-content-center"><span>ADD TO BOX &rarr;</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTHENTICATION DEMO MODAL -->
+  <div id="auth-modal" class="modal-editorial-backdrop">
+    <div class="modal-editorial-box" style="max-width: 500px; grid-template-columns: 1fr;">
+      <button id="auth-modal-close" class="modal-close-btn">&times;</button>
+      <div class="p-4 p-md-5">
+        <span class="editorial-sub d-block mb-2 text-center">MEMBER ACCESS</span>
+        <h3 class="font-serif fs-2 text-center mb-4">EDITÉ CLUB LOG IN</h3>
+        <form id="form-login" class="mb-4">
+          <input type="email" id="login-email" class="contact-form-input" placeholder="Email Address" required>
+          <input type="password" id="login-pass" class="contact-form-input" placeholder="Password" required>
+          <button type="submit" class="btn-editorial w-100 justify-content-center mt-3"><span>LOG IN &rarr;</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN MANAGEMENT DRAWER -->
+  <div id="admin-drawer" class="admin-drawer">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <span class="editorial-sub">FRONTEND ADMIN MODE</span>
+      <button id="btn-close-admin" class="btn-close-mobile">&times;</button>
+    </div>
+    <h3 class="font-serif fs-4 mb-2">Member Subscriptions</h3>
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Plan</th>
+          <th>Status</th>
+          <th>Style</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="admin-table-body"></tbody>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="editorial-container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand-logo mb-3 d-inline-flex">
+            <div class="brand-logo-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="3" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="brand-text-group">
+              <span class="brand-name">EDITÉ CLUB</span>
+              <span class="brand-tagline">PARIS &bull; ATELIER</span>
+            </div>
+          </a>
+          <p class="text-muted" style="font-size: 0.85rem; max-width: 300px;">Style, curated for you. An independent fashion discovery platform and personal luxury subscription club.</p>
+        </div>
+        <div>
+          <span class="editorial-sub mb-3 d-block">EXPLORE</span>
+          <ul class="list-unstyled d-flex flex-column gap-2" style="font-size: 0.85rem;">
+            <li><a href="discover.html">Discover Collection</a></li>
+            <li><a href="lookbook.html">Digital Lookbook</a></li>
+            <li><a href="style-quiz.html">Interactive Style Quiz</a></li>
+            <li><a href="box-builder.html">Box Builder</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="editorial-sub mb-3 d-block">CLUB</span>
+          <ul class="list-unstyled d-flex flex-column gap-2" style="font-size: 0.85rem;">
+            <li><a href="about.html">About Atelier</a></li>
+            <li><a href="contact.html">Contact Stylist</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="editorial-sub mb-3 d-block">CONNECT</span>
+          <div class="footer-social-icons d-flex gap-2 mb-3">
+            <a href="#" class="footer-social-link" title="Instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" title="Facebook" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" title="Pinterest" aria-label="Pinterest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="20" x2="12" y2="11" />
+                <path d="M10.7 14c.437 1.263 1.43 2 2.55 2c2.071 0 3.75 -1.554 3.75 -4a5 5 0 1 0 -9.7 1.7" />
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" title="X (Twitter)" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" title="TikTok" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </a>
+          </div>
+          <span class="text-muted" style="font-size: 0.75rem; letter-spacing: 0.1em;">@EDITECLUB &bull; PARIS</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 EDITÉ CLUB PARIS. ALL RIGHTS RESERVED.</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="btn-back-to-top" class="btn-back-to-top" aria-label="Back to Top" title="Back to Top"><span>TOP</span> ↑</button>
+
+  <!-- Bootstrap 5 JS Bundle & App JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
